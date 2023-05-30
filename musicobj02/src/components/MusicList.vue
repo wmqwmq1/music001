@@ -7,16 +7,16 @@
     <div class="mlist">
       <div class="swiper-container" id="musicSwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="item in musicls.musics" :key="item.id">
+          <router-link :to="{ path:'/listview',query:{id:item.id} }" class="swiper-slide" v-for="item in musicls.musics" :key="item.id"> 
             <img :src="item.picUrl"  alt="">
             <div class="name">{{ item.name }}</div>
             <div class="count">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-fanjutuijian"></use>
               </svg>
-              <span>{{ item.playCount }}</span>
+              <span>{{ changeValue (item.playCount) }}</span>
             </div>
-          </div>
+         </router-link>
           </div>
         </div>
       </div>
@@ -32,18 +32,18 @@ export default {
   name: "musiclist",
   setup() {
     const musicls = reactive({ musics:[]}); 
-    function changeValue(num){  //格式化播放量
-        var res = 0;
-        if(num>=100000000){
-            res = num/100000000;
-            res = res.toFixed(2) + "亿";
-        }else if(num >=10000){
-            res = num/10000;
-            res = res.toFixed(2) + "万";
-        }else{
-            res = num;
-        }
-        return res;
+    function changeValue(num){
+     var res = 0;
+     if(num>=100000000){
+        res=num/10000000;
+        res = res.toFixed(2) + "亿";
+     }else if(num>= 10000){
+        res=num/10000;
+        res = res.toFixed(2) + "万";
+     }else{
+        res = num;
+     }
+     return res;
     }
      onMounted(async() => {
         var res = await getMusic(10);
@@ -54,7 +54,7 @@ export default {
         //view与model绑定成功之后
       var swiper = new Swiper("#musicSwiper", {
         slidesPerView: 3, //一屏显示几个滑块
-        spaceBetween: 12, //每个滑块之间的间距
+        spaceBetween: 10, //每个滑块之间的间距
      })
       
       })
@@ -86,7 +86,7 @@ export default {
       text-align: center;
       line-height: 0.5rem;
     }
-  }
+  } 
   .mlist {
     .swiper-container {
       width: 100%;

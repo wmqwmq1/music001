@@ -1,31 +1,30 @@
 <template>
-       <div class="iconList">
+    <div class= "iconList">
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-fanjutuijian"></use>
-            </svg>
-            <span>每日推荐</span>
+             <svg class="icon" aria-hidden="true">
+            <use xlink:href= "#icon-fanjutuijian"></use>
+         </svg>
+         <span>每日推荐</span>
         </div>
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-airec"></use>
-            </svg>
-            <span>私人FM</span>
+             <svg class="icon" aria-hidden="true">
+            <use xlink:href= "#icon-airec"></use>
+         </svg>
+         <span>私人FM</span>
         </div>
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-gedan"></use>
-            </svg>
-            <span>歌单</span>
+             <svg class="icon" aria-hidden="true">
+            <use xlink:href= "#icon-gedan"></use>
+         </svg>
+         <span>歌单</span>
         </div>
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-paihangbang"></use>
-            </svg>
-            <span>排行榜</span>
+             <svg class="icon" aria-hidden="true">
+            <use xlink:href= "#icon-paihangbang"></use>
+         </svg>
+         <span>排行榜</span>
         </div>
-       </div>
-
+    </div>
 </template>
 
 <script>
@@ -56,5 +55,3 @@ export default{
 }
 
 </style>
-
-

@@ -1,8 +1,19 @@
 <template>
-  
-  <router-view/>
+  <div>
+      <router-view/>
+      <play-controller></play-controller>
+  </div>
+
 </template>
 
+<script>
+import PlayController from './components/PlayController.vue';
+export default {
+  components:{
+    PlayController
+  }
+}
+</script>
 <style lang="less">
 *{
   margin: 0;
